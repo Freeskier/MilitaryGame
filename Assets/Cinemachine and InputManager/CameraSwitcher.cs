@@ -38,7 +38,11 @@ public class CameraSwitcher : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
         else if(!isPlayerCam && Keyboard.current.pKey.isPressed){
-            animator.Play("RadioCamera");
+            animator.Play("RadioFrontCamera");
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if(!isPlayerCam && Keyboard.current.lKey.isPressed){
+            animator.Play("RadioBackCamera");
             Cursor.lockState = CursorLockMode.None;
         }
         isPlayerCam = !isPlayerCam;
